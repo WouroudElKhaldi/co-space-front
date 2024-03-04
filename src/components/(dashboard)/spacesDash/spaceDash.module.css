@@ -1,0 +1,36 @@
+.h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.h1_container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: var(--color-blue);
+  color: var(--color-offWhite);
+  width: 120px;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.1s;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--color-blue-hover);
+}
+
+.button.amenity {
+  width: 150px;
+}

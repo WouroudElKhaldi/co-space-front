@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --color-blue: #4d6188;
+  --color-blue-back: #4d6188b0;
+  --color-blue-hover: #6f84ae;
+  --color-brown: #b4602d;
+  --color-beige: #d28d48;
+  --color-offWhite: #ededf5;
+  --color-white: #ffffff;
+  --color-black: #000;
+  --color-error: #8b0000;
+  --filter-shadow: 0 0 10px 2px rgba(179, 179, 179, 0.5);
+  --card-shadow: 0 0 30px 2px gray;
+  --margin-top: 6rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(213 211 211 / 8%);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.slick-slide,
+.slick-slide > div {
+  border-radius: 15px;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-blue);
+  outline: 1px solid var(--color-beige);
+}
+
+.MuiDataGrid-virtualScroller::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+.MuiDataGrid-virtualScroller::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.MuiDataGrid-virtualScroller::-webkit-scrollbar-thumb {
+  background-color: var(--color-blue-hover);
+}
+
+.typed-cursor {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-beige);
+}
+
+@media (max-width: 500px) {
+  .typed-cursor {
+    font-size: 1.5rem;
+  }
+}

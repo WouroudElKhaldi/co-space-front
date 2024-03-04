@@ -1,0 +1,516 @@
+.h2 {
+  position: relative;
+  font-size: 2.2rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.h2_holder {
+  display: flex;
+  width: 90%;
+  margin: auto;
+}
+
+.h2::after {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  content: "";
+  background-color: var(--color-blue);
+  left: 0;
+  bottom: -5px;
+}
+
+.container {
+  width: 100%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5rem;
+}
+
+.space_holder {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 1rem;
+  row-gap: 2rem;
+}
+
+.map {
+  width: 100%;
+  height: 85vh;
+  filter: brightness(0.9);
+  border-radius: 20px;
+  box-shadow: 0 0 15px gray;
+}
+
+.mapHolder {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mapLeft {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  justify-content: space-evenly;
+}
+
+.mapRight {
+  width: 680px;
+  height: 100%;
+  position: relative;
+  border-radius: 20px;
+}
+
+.mapCard {
+  position: absolute;
+  background-color: var(--color-blue-hover);
+  width: 7rem;
+  height: 4rem;
+  cursor: pointer;
+  border-radius: 0 10px 10px 10px;
+}
+
+.cardBody:hover,
+.cardBody:hover .cardHead {
+  background-color: var(--color-offWhite);
+  color: var(--color-blue);
+  padding-left: 0;
+}
+
+.cardBody:hover .cardNumber {
+  left: 0rem;
+}
+
+.cardBody:hover .card_title {
+  color: var(--color-offWhite);
+}
+
+.mapCard.one {
+  top: 52.5%;
+  left: 24%;
+}
+
+.mapCard.two {
+  top: 20.5%;
+  right: 36.5%;
+}
+
+.mapCard.three {
+  bottom: 17%;
+  left: 16%;
+}
+
+.mapCard.four {
+  top: 45%;
+  right: 12%;
+}
+
+.mapCard.five {
+  top: 32%;
+  right: 47%;
+}
+
+.cardHead {
+  z-index: 0;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--color-blue-hover);
+  transform: rotate(45deg);
+}
+
+.cardBody {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  padding-left: 1.5rem;
+  z-index: 1;
+  transition: all 0.1s ease-in-out;
+  overflow: hidden;
+  border-radius: 0 10px 10px 10px;
+}
+
+.cardHead,
+.cardNumber {
+  position: absolute;
+}
+
+.card_title {
+  bottom: 50%;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-offWhite);
+}
+
+.cardNumber {
+  left: -8rem;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.cardHead {
+  top: -1rem;
+  left: 7px;
+}
+.scroll {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll > .img {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: url(../../assets//login.jpg);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.3);
+}
+
+.map_H2 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.map_H2 > span {
+  color: var(--color-blue);
+  font-weight: 700;
+}
+.map_info_holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.map_info_card {
+  width: 16rem;
+  height: 10rem;
+  border-radius: 15px;
+  background-color: transparent;
+  box-shadow: 0 0 10px gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.map_info_num {
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: var(--color-offWhite);
+  text-shadow: -1px 1px 0 var(--color-blue), 1px 1px 0 var(--color-blue),
+    1px -1px 0 var(--color-blue), -1px -1px 0 var(--color-blue);
+}
+
+.map_info_card > p {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--color-blue);
+}
+
+.p_holder {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 1300px) {
+  .mapRight {
+    width: 550px;
+  }
+
+  .mapCard {
+    width: 7rem;
+    height: 4.5rem;
+  }
+
+  .cardBody {
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .mapRight {
+    width: 500px;
+  }
+}
+
+@media (max-width: 950px) {
+  .mapHolder {
+    width: 70%;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+  .mapCard {
+    height: 3rem;
+  }
+
+  .mapLeft,
+  .mapRight {
+    width: 100%;
+    row-gap: 2rem;
+  }
+  .cardHead {
+    width: 1.5rem;
+    height: 1.5rem;
+    top: -12px;
+    left: 5px;
+  }
+  .map_info_holder {
+    justify-content: flex-start;
+    column-gap: 2rem;
+  }
+}
+@media (max-width: 700px) {
+  .mapHolder {
+    width: 85%;
+  }
+}
+
+@media (max-width: 650px) {
+  .mapCard {
+    width: 6rem;
+  }
+  .map {
+    height: 65vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .mapCard.two {
+    right: 32.5%;
+  }
+  .mapCard.five {
+    right: 41%;
+  }
+  .mapHolder {
+    width: 90%;
+  }
+}
+
+/* hero styles */
+.hero_Container1,
+.hero_Container2 {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img1,
+.img2 {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.5);
+}
+
+.img1 {
+  background: url(../../../public/userSection.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img2 {
+  background: url(../../../public/ownerSection.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.content1,
+.content2 {
+  position: absolute;
+  width: 70%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slogan__container1,
+.slogan__container2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 2rem;
+  border-radius: 20px;
+  padding: 2rem 4rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(19px);
+}
+
+.slogan__container1 {
+  background-color: var(--color-blue-back);
+}
+
+.slogan__container2 {
+  background-color: rgba(210, 141, 72, 0.5);
+}
+.slogan__container1 > h2,
+.slogan__container2 > h2 {
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-offWhite);
+}
+
+.slogan__container1 > ul,
+.slogan__container2 > ul {
+  font-size: 1.2rem;
+  color: var(--color-offWhite);
+  text-align: left;
+  row-gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: circle;
+}
+
+@media (max-width: 1435px) {
+  .map_H2 {
+    font-size: 2.5rem;
+  }
+  .map_info_card {
+    width: 14rem;
+  }
+}
+
+@media (max-width: 1400px) {
+  .hero_Container1,
+  .hero_Container2 {
+    height: 70vh;
+  }
+  .content1,
+  .content2 {
+    width: 90%;
+    height: 60vh;
+  }
+}
+
+@media (max-width: 1265px) {
+  .map_info_card {
+    width: 12rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .map_H2 {
+    font-size: 2rem;
+  }
+  .map_info_card {
+    width: 10rem;
+    height: 7rem;
+  }
+
+  .map_info_num {
+    font-size: 2.5rem;
+  }
+  .map_info_card > p {
+    font-size: 1.5rem;
+  }
+  .p_holder {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .slogan__container1 > ul,
+  .slogan__container2 > ul {
+    padding-left: 1rem;
+    font-size: 1rem;
+  }
+  .hero_Container1,
+  .hero_Container2 {
+    height: 80vh;
+  }
+  .content1,
+  .content2 {
+    width: 90%;
+    height: 70vh;
+  }
+  .slogan__container1,
+  .slogan__container2 {
+    padding: 1.5rem;
+  }
+
+  .slogan__container1 > h2,
+  .slogan__container2 > h2 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero_Container1,
+  .hero_Container2 {
+    height: 90vh;
+  }
+  .content1,
+  .content2 {
+    width: 100%;
+    height: 90vh;
+  }
+  .slogan__container1,
+  .slogan__container2 {
+    border-radius: 0;
+    backdrop-filter: blur(5px);
+  }
+}
+
+@media (max-width: 350px) {
+  .slogan__container1 > h2,
+  .slogan__container2 > h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .slogan__container1 > ul,
+  .slogan__container2 > ul {
+    padding-left: 0;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    row-gap: 2rem;
+  }
+
+  .slogan__container1 > ul > li,
+  .slogan__container2 > ul > li {
+    text-align: center;
+  }
+}

@@ -1,0 +1,14 @@
+.container {
+  z-index: 1;
+  font-size: 20vh;
+  font-weight: 300;
+  height: 100%;
+  white-space: nowrap;
+  width: 100%;
+  color: var(--color-offWhite);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

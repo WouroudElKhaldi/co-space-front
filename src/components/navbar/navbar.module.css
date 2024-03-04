@@ -1,0 +1,283 @@
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  color: var(--color-offWhite);
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease, color 0.1s ease; /* Add color transition */
+}
+
+.headerContainer.scrolled {
+  background-color: rgba(255, 255, 255, 0.3); /* Adjust the opacity as needed */
+}
+
+.headerContainer.scrolled.normal {
+  backdrop-filter: blur(10px);
+}
+
+.headerContainer.darkFont,
+.headerContainer.darkFont .white {
+  color: black !important; /* Change font color to black */
+}
+
+.headerContainer.darkFont.notNormal,
+.headerContainer.darkFont.notNormal .white {
+  color: white !important; /* Change font color to black */
+}
+
+.headerTransparent {
+  background-color: transparent;
+}
+.headerBule {
+  background-color: var(--color-blue);
+}
+.whatever {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  height: 90px;
+  z-index: 1000;
+  background-color: transparent;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: var(--color-blue);
+  color: var(--color-offWhite);
+  width: 120px;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.1s;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 38px;
+  padding: 10px;
+  border-radius: 50%;
+  background: var(--color-brown) !important;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.1s;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: var(--color-offWhite) !important;
+}
+
+.logout:hover {
+  background-color: var(--color-offWhite) !important;
+  color: var(--color-brown) !important;
+  opacity: 0.9;
+}
+
+.button:hover {
+  background-color: var(--color-blue-hover);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.menuItem {
+  position: relative;
+  /* color: white; */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 18px;
+  /* Transition the color property for smooth effect */
+}
+.closeMenu {
+  position: absolute;
+  top: 32px;
+  right: 24px;
+  cursor: pointer;
+  color: var(--color-offWhite);
+}
+.white {
+  color: var(--color-offWhite);
+}
+
+.black {
+  color: black;
+}
+
+.blue {
+  color: var(--color-blue);
+}
+
+.menu .menuItem:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3.5px;
+  transition: width 0.3s ease;
+}
+
+.menu .menuItem:hover:after,
+.menu .menuItem:focus:after {
+  width: 100%;
+  background-color: var(--color-brown);
+  /* Change underline color to red when hovered */
+}
+
+.mobile_btn {
+  display: none;
+}
+.menu.active {
+  left: 0;
+}
+
+.mobile_btn_blue {
+  display: none;
+}
+
+.menuItem.activeNavItem:after {
+  width: 100%;
+  background-color: var(--color-brown);
+  /* Change underline color to red when it's the active page */
+}
+
+@media (max-width: 1200px) {
+  .menu {
+    gap: 1rem;
+  }
+  .menuItem {
+    font-size: 1rem;
+  }
+  .button {
+    font-size: 0.9rem;
+    width: 80px;
+    height: 35px;
+    padding: 8px;
+  }
+}
+@media (max-width: 800px) {
+  .white {
+    color: var(--color-offWhite);
+  }
+  .black {
+    color: black;
+  }
+  .menu {
+    gap: 1rem;
+  }
+  .whatever {
+    gap: 1rem;
+  }
+
+  .button {
+    background-color: var(--color-brown);
+  }
+
+  .button:hover {
+    background-color: var(--color-beige);
+  }
+
+  .logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: var(--color-brown);
+    color: var(--color-offWhite);
+    width: 120px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.1s;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .mobile_btn {
+    display: flex;
+    cursor: pointer;
+    right: 2.5rem;
+    top: 50%;
+    z-index: 10;
+    margin-left: 1rem;
+  }
+  .mobile_btn_blue {
+    color: var(--first-blue-color);
+    display: flex;
+    cursor: pointer;
+    right: 2.5rem;
+    top: 50%;
+    z-index: 10;
+    margin-left: 1rem;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    left: 100%;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    transition: left 0.8s;
+    overflow: hidden;
+    row-gap: 2rem;
+  }
+
+  .menu .menuItem {
+    color: white;
+    font-size: 22px;
+  }
+  .whatever {
+    flex-direction: row-reverse;
+    gap: 0;
+  }
+
+  .active {
+    left: 0;
+  }
+
+  .navbar Link {
+    font-size: 2rem;
+  }
+}
+
+.ul {
+  list-style-type: none;
+}
+
+.li {
+  color: var(--main-text-color);
+  text-decoration: none;
+}

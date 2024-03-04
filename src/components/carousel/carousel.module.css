@@ -1,0 +1,58 @@
+.img {
+  width: 100%;
+  height: 15rem;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.slider {
+  border-radius: 15px !important;
+}
+
+.slider:hover .arrow {
+  display: flex;
+}
+
+.img:focus {
+  outline: none;
+}
+
+.img:hover {
+  transform: scale(1.2);
+  border-radius: 15px;
+}
+
+.arrow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border-radius: 50%;
+  border: 2px solid var(--color-offWhite);
+  background-color: var(--color-offWhite);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.right_arrow {
+  right: 10px;
+}
+
+.right_arrow:before {
+  content: ">";
+  position: absolute;
+  font-weight: 600;
+  right: 8px;
+}
+
+.right_arrow:hover {
+  background-color: var(--color-white);
+}
+
+.right_arrow:focus {
+  outline: none;
+}
