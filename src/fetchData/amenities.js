@@ -27,7 +27,7 @@ export const deleteAmenity = async ({ id }) => {
 export const addAmenity = async ({ name, category, image }) => {
   try {
     const res = await axios.post(
-      `${process.env.NEXT_PUBLIC_BACKEND_PATH}/amenities`,
+      `${process.env.NEXT_PUBLIC_BACKEND_PATH}amenities`,
       {
         name,
         category,
