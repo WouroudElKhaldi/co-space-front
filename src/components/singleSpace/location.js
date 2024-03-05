@@ -1,6 +1,4 @@
-const Location = ({}) => {
-  const latitude = 34.43456558183152;
-  const longitude = 35.8363551818641;
+const Location = ({ latitude, longitude }) => {
   return (
     <>
       <iframe
