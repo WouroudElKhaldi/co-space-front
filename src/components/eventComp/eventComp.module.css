@@ -9,6 +9,7 @@
   color: #fdfcfd;
   margin: 0 0 0 3rem;
   height: fit-content;
+  box-shadow: var(--filter-shadow);
 }
 
 .container {

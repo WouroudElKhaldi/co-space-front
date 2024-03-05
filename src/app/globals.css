@@ -15,21 +15,16 @@
   --color-white: #ffffff;
   --color-black: #000;
   --color-error: #8b0000;
-  --filter-shadow: 0 0 10px 2px rgba(179, 179, 179, 0.5);
+  --filter-shadow: 0 0 10px 2px rgba(179, 179, 179, 0.3);
   --card-shadow: 0 0 30px 2px gray;
   --margin-top: 6rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: black;
   background-color: rgb(213 211 211 / 8%);
 }
 

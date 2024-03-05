@@ -50,7 +50,7 @@ export const getSpacesByUser = async ({ userId }) => {
 };
 
 // getting space images
-export const getSpaceImage = async (spaceId) => {
+export const getSpaceImage = async ({ spaceId }) => {
   try {
     const res = await axiosInstance.post("space/image/bySpace", {
       spaceId: spaceId,
@@ -111,6 +111,37 @@ export const getByCity = async ({ city }) => {
 export const deleteSpace = async ({ spaceId }) => {
   try {
     const res = await axiosInstance.delete("space", { data: { id: spaceId } });
+    return res;
+  } catch (error) {
+    return { errorMessage: error.response.data, status: error.response.status };
+  }
+};
+
+export const addSpace = async ({ data }) => {
+  const {
+    name,
+    cityId,
+    address,
+    longitude,
+    latitude,
+    description,
+    categoryId,
+    email,
+    status,
+  } = data;
+
+  try {
+    const res = await axiosInstance.post("space", {
+      name,
+      cityId,
+      address,
+      longitude,
+      latitude,
+      description,
+      categoryId,
+      email,
+      status,
+    });
     return res;
   } catch (error) {
     return { errorMessage: error.response.data, status: error.response.status };

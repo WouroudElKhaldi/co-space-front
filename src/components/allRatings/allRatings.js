@@ -43,25 +43,36 @@ export function AllRatingsModal({ openRatings, handleClose, ratings }) {
                 ratings.map((rating, index) => {
                   return (
                     <li key={index} className={styles.rating_Li}>
-                      <div className={styles.rating_Title}>
-                        <Avatar
-                          src={rating.userId.image}
-                          alt={rating.userId.fullName}
-                          className={styles.rating_Image}
-                        />
-                        <p className={styles.rating_Name}>
-                          {rating.userId.fullName}
+                      <div className={styles.Rate_titleHolder}>
+                        <div className={styles.rating_Title}>
+                          <Avatar
+                            src={rating.userId.image}
+                            alt={rating.userId.fullName}
+                            className={styles.rating_Image}
+                          />
+                          <p className={styles.rating_Name}>
+                            {rating.userId.fullName}
+                          </p>
+                        </div>
+
+                        <p className={styles.rating_Date}>
+                          {formatDate(rating.createdAt)}
+                          {}
                         </p>
                       </div>
-                      <p className={styles.rating_Star}>
-                        <Rating value={rating.rate} readOnly precision={0.25} />
-                        {rating.rate}
-                      </p>
-                      <p className={styles.rating_Message}>{rating.message}</p>
-                      <p className={styles.rating_Date}>
-                        {formatDate(rating.createdAt)}
-                        {}
-                      </p>
+                      <div className={styles.Rate_titleHolder}>
+                        <p className={styles.rating_Message}>
+                          {rating.message}
+                        </p>
+                        <p className={styles.rating_Star}>
+                          {rating.rate}
+                          <Rating
+                            value={rating.rate}
+                            readOnly
+                            precision={0.25}
+                          />
+                        </p>
+                      </div>
                     </li>
                   );
                 })}

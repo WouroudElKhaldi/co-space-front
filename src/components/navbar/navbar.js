@@ -37,7 +37,7 @@ export default function Navbar() {
               src={
                 isDarkFont || pathname.includes("spaces/")
                   ? "/logo2.svg"
-                  : "/logo.svg"
+                  : "/logo2.svg"
               }
               width={100}
               height={100}
@@ -332,7 +332,7 @@ export default function Navbar() {
           >
             {!nav ? <AiOutlineMenu size={25} /> : ""}
           </div>
-
+          {/* 
           {user && (
             <Link href="/profile">
               <Avatar
@@ -346,7 +346,7 @@ export default function Navbar() {
                 }}
               />
             </Link>
-          )}
+          )} */}
         </div>
       </div>
     </header>

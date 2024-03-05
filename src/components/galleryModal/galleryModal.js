@@ -6,33 +6,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
 import { ImageModal } from "./imageModal";
 import { useState } from "react";
-export function GalleryModal({ openGallery, handleClose }) {
+export function GalleryModal({ openGallery, handleClose, images }) {
   const [openImage, setOpenImage] = useState({
     open: false,
     src: "",
   });
-  const images = [
-    { src: "/ownerSection.jpg" },
-    { src: "/workHero.jpg" },
-    { src: "/userSection.jpg" },
-    { src: "/hero2.jpg" },
-    { src: "/teamHero.jpg" },
-    { src: "/ownerSection.jpg" },
-    { src: "/workHero.jpg" },
-    { src: "/userSection.jpg" },
-    { src: "/hero2.jpg" },
-    { src: "/teamHero.jpg" },
-    { src: "/ownerSection.jpg" },
-    { src: "/workHero.jpg" },
-    { src: "/userSection.jpg" },
-    { src: "/hero2.jpg" },
-    { src: "/teamHero.jpg" },
-    { src: "/ownerSection.jpg" },
-    { src: "/workHero.jpg" },
-    { src: "/userSection.jpg" },
-    { src: "/hero2.jpg" },
-    { src: "/teamHero.jpg" },
-  ];
   return (
     <>
       <Modal
@@ -59,7 +37,7 @@ export function GalleryModal({ openGallery, handleClose }) {
               {images.map((image, index) => (
                 <div key={index} className={styles.grid_Item}>
                   <Image
-                    src={image.src}
+                    src={`${process.env.NEXT_PUBLIC_BACKEND_PATH}/images/${image.image}`}
                     width={200}
                     height={200}
                     alt={`image-${index}`}
@@ -67,7 +45,7 @@ export function GalleryModal({ openGallery, handleClose }) {
                     onClick={() =>
                       setOpenImage({
                         open: true,
-                        src: image.src,
+                        src: `${process.env.NEXT_PUBLIC_BACKEND_PATH}/images/${image.image}`,
                       })
                     }
                   />

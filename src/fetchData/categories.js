@@ -7,5 +7,5 @@ export const getCategories = async () => {
     throw new Error("Failed to fetch Data");
   }
 
-  return res.data;
+  return res;
 };

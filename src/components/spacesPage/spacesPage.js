@@ -53,7 +53,7 @@ export default function SpacesPage() {
   const fetchCategoryData = async () => {
     setLoading(true);
     const res = await getCategories();
-    setCategoryData(res);
+    setCategoryData(res.data);
     setLoading(false);
   };
 
@@ -75,6 +75,7 @@ export default function SpacesPage() {
 
   useEffect(() => {
     const filterData = async () => {
+      setLoading(true);
       const res = await filterSpaces({
         minPrice: parseInt(minPrice),
         maxPrice: parseInt(maxPrice),
@@ -440,7 +441,7 @@ export default function SpacesPage() {
         )}
         <div className={styles.card__Container}>
           {loading ? (
-            <Loading height={"50vh"} width={"70vh"} />
+            <Loading height={"50vh"} width={"70vw"} />
           ) : (
             <>
               {spacesData &&
@@ -450,6 +451,20 @@ export default function SpacesPage() {
             </>
           )}
         </div>
+        {!loading && spacesData.length === 0 && (
+          <div className={styles.noResult}>
+            <p className={styles.notFound}>No spaces found!!</p>
+            <Image
+              src="/search.png"
+              width={300}
+              height={300}
+              alt="no result"
+              style={{
+                margin: "auto",
+              }}
+            />
+          </div>
+        )}
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Stack spacing={2}>
             <Pagination
@@ -477,12 +492,6 @@ export default function SpacesPage() {
             />
           </Stack>
         </div>
-        {!loading && spacesData.length === 0 && (
-          <div className={styles.noResult}>
-            <Image src="/search.png" width={300} height={300} alt="no result" />
-            <p>No spaces found!!</p>
-          </div>
-        )}
       </Box>
     </section>
   );

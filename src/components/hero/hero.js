@@ -1,11 +1,20 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import styles from "./hero.module.css";
 import Typed from "typed.js";
 import Link from "next/link";
+import ListSpaceModal from "../listSpace/listSpace";
+import useAlertStore from "@/zustand/alertStore";
+import DoneModal from "../doneModal/doneModal";
+import { AuthContext } from "@/context/authContext";
 
 export default function HeroComp() {
+  const { user } = useContext(AuthContext);
+  const [openNote, setOpenNote] = useState(false);
+  const [openAddSpace, setOpenAddSapce] = useState(false);
+  const { alertData, setAlertData } = useAlertStore();
+
   let mystrings;
   mystrings = [""];
   useEffect(() => {
@@ -23,6 +32,18 @@ export default function HeroComp() {
     };
   }, [mystrings]);
   const slogan = useRef();
+
+  const hanldeOpen = () => {
+    if (!user) {
+      setAlertData({
+        message: "Upss , you're not logged in!",
+        type: "error",
+      });
+      setOpenNote(true);
+    } else {
+      setOpenAddSapce(true);
+    }
+  };
   return (
     <section className={styles.container}>
       <div className={styles.img}></div>
@@ -42,11 +63,22 @@ export default function HeroComp() {
         <div className={styles.slogan__container2}>
           <p className={styles.slogan2}>DO YOU OWN A PROFFESIONAL</p>
           <span className={styles.typed2}>WORK SPACE?</span>
-          <Link href="/spaces" className={styles.btn2}>
+          <button className={styles.btn2} onClick={() => hanldeOpen()}>
             List Your Space
-          </Link>
+          </button>
         </div>
       </div>
+      <DoneModal />
+      <ListSpaceModal
+        open={openAddSpace}
+        handleClose={() => {
+          setOpenAddSapce;
+          setAlertData({
+            message: "",
+            type: "",
+          });
+        }}
+      />
     </section>
   );
 }
