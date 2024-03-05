@@ -177,7 +177,7 @@ export default function SingleSpace({ id }) {
         <>
           <div className={styles.grid_Gallery}>
             {space.images &&
-              space.images.splice(0, 5).map((image, index) => {
+              space.images.map((image, index) => {
                 return (
                   <div
                     key={index}
